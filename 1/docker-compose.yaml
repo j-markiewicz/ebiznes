@@ -1,0 +1,6 @@
+services:
+  ebiznes-1:
+    image: jmarkiewicz0/ebiznes-1
+    build:
+      context: .
+      dockerfile: ./4.5.Dockerfile
