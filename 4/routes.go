@@ -22,7 +22,7 @@ func Index(c *echo.Context) error {
 
 // GET /products
 func ListProducts(c *echo.Context) error {
-	res, err := db.List()
+	res, err := db.ListProduct()
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -46,7 +46,7 @@ func CreateProduct(c *echo.Context) error {
 	}
 
 	product := Product{Name: name, Description: description, Price: uint32(price)}
-	id, err := db.Create(product)
+	id, err := db.CreateProduct(product)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -63,7 +63,7 @@ func ReadProduct(c *echo.Context) error {
 		return c.String(http.StatusNotFound, err.Error())
 	}
 
-	exists, err := db.Exists(id)
+	exists, err := db.ExistsProduct(id)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -72,7 +72,7 @@ func ReadProduct(c *echo.Context) error {
 		return c.NoContent(http.StatusNotFound)
 	}
 
-	res, err := db.Read(id)
+	res, err := db.ReadProduct(id)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -88,7 +88,7 @@ func UpdateProduct(c *echo.Context) error {
 		return c.String(http.StatusNotFound, err.Error())
 	}
 
-	exists, err := db.Exists(id)
+	exists, err := db.ExistsProduct(id)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -97,7 +97,7 @@ func UpdateProduct(c *echo.Context) error {
 		return c.NoContent(http.StatusNotFound)
 	}
 
-	product, err := db.Read(id)
+	product, err := db.ReadProduct(id)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -122,7 +122,7 @@ func UpdateProduct(c *echo.Context) error {
 		product.Price = uint32(price)
 	}
 
-	err = db.Update(id, product)
+	err = db.UpdateProduct(id, product)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -138,7 +138,7 @@ func DeleteProduct(c *echo.Context) error {
 		return c.String(http.StatusNotFound, err.Error())
 	}
 
-	exists, err := db.Exists(id)
+	exists, err := db.ExistsProduct(id)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
@@ -147,10 +147,106 @@ func DeleteProduct(c *echo.Context) error {
 		return c.NoContent(http.StatusNotFound)
 	}
 
-	err = db.Delete(id)
+	err = db.DeleteProduct(id)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
 
 	return c.NoContent(http.StatusOK)
+}
+
+// POST /carts
+func CreateCart(c *echo.Context) error {
+	id, err := db.CreateCart()
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	c.Response().Header().Set("Location", "/carts/"+id.String())
+	return c.NoContent(http.StatusCreated)
+}
+
+// GET /carts/:id
+func ReadCart(c *echo.Context) error {
+	idStr := c.Param("id")
+	id, err := uuid.Parse(idStr)
+	if err != nil {
+		return c.String(http.StatusNotFound, err.Error())
+	}
+
+	exists, err := db.ExistsCart(id)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	if !exists {
+		return c.NoContent(http.StatusNotFound)
+	}
+
+	res, err := db.ReadCart(id)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	return c.JSON(http.StatusOK, res)
+}
+
+// DELETE /carts/:id
+func DeleteCart(c *echo.Context) error {
+	idStr := c.Param("id")
+	id, err := uuid.Parse(idStr)
+	if err != nil {
+		return c.String(http.StatusNotFound, err.Error())
+	}
+
+	exists, err := db.ExistsCart(id)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	if !exists {
+		return c.NoContent(http.StatusNotFound)
+	}
+
+	err = db.DeleteCart(id)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	return c.NoContent(http.StatusOK)
+}
+
+// POST /carts/:id
+func CreateCartItem(c *echo.Context) error {
+	cidStr := c.Param("id")
+	cid, err := uuid.Parse(cidStr)
+	if err != nil {
+		return c.String(http.StatusNotFound, err.Error())
+	}
+
+	pidStr := c.FormValue("id")
+	if pidStr == "" {
+		return c.String(http.StatusBadRequest, "required value missing")
+	}
+
+	pid, err := uuid.Parse(pidStr)
+	if err != nil {
+		return c.String(http.StatusBadRequest, err.Error())
+	}
+
+	exists, err := db.ExistsProduct(pid)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	if !exists {
+		return c.String(http.StatusBadRequest, "product "+pid.String()+" not found")
+	}
+
+	err = db.AddToCart(cid, pid)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+
+	return c.NoContent(http.StatusAccepted)
 }

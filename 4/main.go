@@ -25,6 +25,11 @@ func main() {
 	e.PATCH("/products/:id", UpdateProduct)
 	e.DELETE("/products/:id", DeleteProduct)
 
+	e.POST("/carts", CreateCart)
+	e.POST("/carts/:id", CreateCartItem)
+	e.GET("/carts/:id", ReadCart)
+	e.DELETE("/carts/:id", DeleteCart)
+
 	if err := e.Start(":8000"); err != nil {
 		panic("failed to start server:\n" + err.Error())
 	}
