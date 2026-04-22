@@ -63,7 +63,7 @@ W ramach projektu należy stworzyć trzy komponenty: Produkty, Koszyk oraz Płat
 Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks.
 
 - [x] 3.0 W ramach projektu należy stworzyć dwa komponenty: [Produkty](./5/src/Products.jsx) oraz [Płatności](./5/src/Payments.jsx); Płatności powinny wysyłać do [aplikacji serwerowej](./5/server/) dane, a w Produktach powinniśmy pobierać dane o produktach z [aplikacji serwerowej](./5/server/);
-- [ ] 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
+- [x] 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
 - [ ] 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks
 - [ ] 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose
 - [ ] 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
