@@ -67,3 +67,20 @@ Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyła
 - [ ] 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks
 - [ ] 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose
 - [ ] 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+
+## [Zadanie 7 - Sonar](https://sonarcloud.io/organizations/j-markiewicz/projects)
+
+Należy dodać projekt aplikacji [klienckiej](https://github.com/j-markiewicz/ebiz7-client) oraz [serwerowej](https://github.com/j-markiewicz/ebiz7-server) (jeden branch, dwa repozytoria) do Sonara w wersji chmurowej (<https://sonarcloud.io/>). Należy poprawić aplikacje uzyskując 0 bugów, 0 zapaszków, 0 podatności, 0 błędów bezpieczeństwa. Dodatkowo należy dodać widżety sonarowe do README w repozytorium dane projektu z wynikami.
+
+- [x] 3.0 Należy dodać lintera do odpowiedniego kodu aplikacji serwerowej [w hookach gita](C:\Users\JMarkiewicz\Desktop\ebiz7-server\git-hooks\pre-commit) <sup>(Z<code>git config core.hooksPath git-hooks</code>)</sup>
+- [x] 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod [aplikacji serwerowej](https://sonarcloud.io/project/overview?id=j-markiewicz_ebiz7-server))
+- [x] 4.0 Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod [aplikacji serwerowej](https://sonarcloud.io/project/overview?id=j-markiewicz_ebiz7-server))
+- [x] 4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod [aplikacji serwerowej](https://sonarcloud.io/project/overview?id=j-markiewicz_ebiz7-server))
+- [x] 5.0 Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie [aplikacji klienckiej](https://sonarcloud.io/project/overview?id=j-markiewicz_ebiz7-client)
+
+![screenshot z sonarcloud z 0 błędami w aplikacji serwerowej](./7/sonar-server.png)
+![screenshot z sonarcloud z 0 błędami w aplikacji klienckiej](./7/sonar-client.png)
+
+<https://golangci-lint.run/>
+~~<https://github.com/pinterest/ktlint>~~
+~~<https://scalameta.org/scalafmt/docs/installation.html>~~
