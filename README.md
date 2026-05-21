@@ -68,6 +68,21 @@ Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyła
 - [ ] 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose
 - [ ] 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
 
+## [Zadanie 6 - Testy](./6/)
+
+Należy stworzyć 20 przypadków testowych w jednym z rozwiązań:
+
+- Cypress JS (JS)
+- Selenium (Kotlin, Python, Java, JS, Go, Scala)
+
+Testy mają w sumie zawierać minimum 50 asercji (3.5). Mają również uruchamiać się na platformie Browserstack (5.0). Proszę pamiętać o stworzeniu darmowego konta via <https://education.github.com/pack>.
+
+- [x] 3.0 Należy stworzyć [20 przypadków testowych](./6/cypress/e2e/spec.cy.js) w CypressJS ~~lub Selenium (Kotlin, Python, Java, JS, Go, Scala)~~
+- [x] 3.5 Należy rozszerzyć [testy funkcjonalne](./6/cypress/e2e/spec.cy.js), aby zawierały minimum 50 asercji
+- [ ] 4.0 Należy stworzyć testy jednostkowe do wybranego wcześniejszego projektu z minimum 50 asercjami
+- [ ] 4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint
+- [ ] 5.0 Należy uruchomić testy funkcjonalne na Browserstacku
+
 ## [Zadanie 7 - Sonar](https://sonarcloud.io/organizations/j-markiewicz/projects)
 
 Należy dodać projekt aplikacji [klienckiej](https://github.com/j-markiewicz/ebiz7-client) oraz [serwerowej](https://github.com/j-markiewicz/ebiz7-server) (jeden branch, dwa repozytoria) do Sonara w wersji chmurowej (<https://sonarcloud.io/>). Należy poprawić aplikacje uzyskując 0 bugów, 0 zapaszków, 0 podatności, 0 błędów bezpieczeństwa. Dodatkowo należy dodać widżety sonarowe do README w repozytorium dane projektu z wynikami.
