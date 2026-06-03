@@ -1,5 +1,5 @@
 from ollama import chat
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 
 app = FastAPI()
 
@@ -17,4 +17,4 @@ async def proxy(req: Request):
         ],
     )
 
-    return response.message.content
+    return Response(response.message.content)
