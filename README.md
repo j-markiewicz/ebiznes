@@ -16,7 +16,7 @@ Obraz dockerowy należy wrzucić na hub.docker.com.
 Dockerfile oraz dodatkowe pliki powinny być na repozytorium git.
 Readme powinno zawierać [link do obrazu na hub.docker.com](https://hub.docker.com/r/jmarkiewicz0/ebiznes-1).
 
-<video controls mute src="./videos/ebiznes-1.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-1.mp4)
 
 ## [Zadanie 2 - Scala](./2/)
 
@@ -33,7 +33,7 @@ Kontrolery mogą bazować na listach zamiast baz danych. CRUD: show all, show by
 <https://scalatra.org/getting-started/first-project.html>
 ~~<https://www.playframework.com/>~~
 
-<video controls mute src="./videos/ebiznes-2.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-2.mp4)
 
 ## [Zadanie 3 - Kotlin](./3/)
 
@@ -48,7 +48,7 @@ Kontrolery mogą bazować na listach zamiast baz danych. CRUD: show all, show by
 
 Aplikację należy uruchomić [na dockerze](./3/Dockerfile).
 
-<video controls mute src="./videos/ebiznes-3.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-3.mp4)
 
 ## [Zadanie 4 - Go](./4/)
 
@@ -62,7 +62,7 @@ Należy stworzyć projekt w echo w Go. Należy wykorzystać gorm do stworzenia k
 
 Termin: 15.04
 
-<video controls mute src="./videos/ebiznes-4.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-4.mp4)
 
 ## [Zadanie 5 - Frontend](./5/)
 
@@ -76,7 +76,7 @@ Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyła
 - [ ] 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose
 - [ ] 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
 
-<video controls mute src="./videos/ebiznes-5.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-5.mp4)
 
 ## [Zadanie 6 - Testy](./6/)
 
@@ -93,7 +93,7 @@ Testy mają w sumie zawierać minimum 50 asercji (3.5). Mają również uruchami
 - [ ] 4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint
 - [ ] 5.0 Należy uruchomić testy funkcjonalne na Browserstacku
 
-<video controls mute src="./videos/ebiznes-6.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-6.mp4)
 
 ## [Zadanie 7 - Sonar](https://sonarcloud.io/organizations/j-markiewicz/projects)
 
@@ -112,7 +112,7 @@ Należy dodać projekt aplikacji [klienckiej](https://github.com/j-markiewicz/eb
 ~~<https://github.com/pinterest/ktlint>~~
 ~~<https://scalameta.org/scalafmt/docs/installation.html>~~
 
-<video controls mute src="./videos/ebiznes-7.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-7.mp4)
 
 ## [Zadanie 8 - OAuth](./8/)
 
@@ -132,7 +132,7 @@ Klucz należy uzyskać na:
 - <https://console.cloud.google.com/apis/dashboard>
 - <https://developers.facebook.com/>
 
-<video controls mute src="./videos/ebiznes-8.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-8.mp4)
 
 ## [Zadanie 9 - LLMy](./9/)
 
@@ -148,7 +148,7 @@ Można wykorzystać lokalny model przez ollama (<https://ollama.com/>).
 
 ![messages from the bot on discord](./9/1.png)
 
-<video controls mute src="./videos/ebiznes-9.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-9.mp4)
 
 ## [Zadanie 10 - Chmura](./10/)
 
@@ -158,4 +158,4 @@ Można wykorzystać lokalny model przez ollama (<https://ollama.com/>).
 - [ ] 4.5 Dodać krok z deploymentem aplikacji klienckiej na chmurę (obie ze sobą rozmawiają)
 - [ ] 5.0 Dodać uruchomienie regresyjnych testów automatycznych (funkcjonalnych) jako krok w Actions w Browserstacku
 
-<video controls mute src="./videos/ebiznes-10.mp4"></video>
+[![Nagranie](./videos/play.png)](./videos/ebiznes-10.mp4)
