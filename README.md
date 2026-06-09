@@ -131,3 +131,11 @@ Należy rozszerzyć funkcjonalność [wcześniej stworzonego bota](./9/src/main/
 Można wykorzystać lokalny model przez ollama (<https://ollama.com/>).
 
 ![messages from the bot on discord](./9/1.png)
+
+## [Zadanie 10 - Chmura](./10/)
+
+- [x] 3.0 Należy stworzyć [odpowiednie instancje](https://ebiznes.janmarkiewicz.tech/products) po stronie chmury na dockerze
+- [x] 3.5 Stworzyć odpowiedni pipeline w [Github Actions](./.github/workflows/ci.yaml) do budowania aplikacji (np. via fatjar)
+- [ ] 4.0 Dodać notyfikację mailową o wynikach z sonara
+- [ ] 4.5 Dodać krok z deploymentem aplikacji klienckiej na chmurę (obie ze sobą rozmawiają)
+- [ ] 5.0 Dodać uruchomienie regresyjnych testów automatycznych (funkcjonalnych) jako krok w Actions w Browserstacku

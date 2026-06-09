@@ -1,0 +1,28 @@
+name: CI
+
+on:
+    workflow_dispatch:
+    push:
+        branches: ["main"]
+
+permissions:
+    contents: write
+    pages: write
+    packages: write
+    id-token: write
+
+concurrency:
+    group: "CI"
+    cancel-in-progress: false
+
+jobs:
+    server-docker:
+        name: Build Server Container
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+            - run: |
+                cd 10
+                echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+                docker build -t ghcr.io/j-markiewicz/ebiznes:latest ./server/
+                docker push ghcr.io/j-markiewicz/ebiznes:latest
